@@ -21,9 +21,9 @@ const quotes = [
 
 // Map of GIFs for exercises (add more as needed)
 const exerciseGifs = {
-    "Crunch jambes levées": "/gifs/jambes/tenor_crunches.gif",
+    "Crunch jambes levées": "https://github.com/zyouax/sport/blob/main/gifs/jambes/tenor_crunches.gif",
     // Add other exercises here, e.g.:
-    "Pompes mixtes": "/gifs/bras/tenor_pompe.gif",
+    "Pompes mixtes": "https://github.com/zyouax/sport/blob/main/gifs/bras/tenor_pompe.gif",
     "Squat maintien": "https://via.placeholder.com/200",
     "Planche levée jambe": "https://via.placeholder.com/200",
     "Superman alterné": "https://via.placeholder.com/200",
