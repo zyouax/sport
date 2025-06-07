@@ -7,7 +7,42 @@ const quotes = [
     "La sueur d’aujourd’hui, les abdos de demain !",
     "Pousse plus fort, tu es plus fort !",
     "Pas d’excuses, juste des résultats !",
+    "Transforme la douleur en puissance ! 🔥",
+    "Chaque effort compte, ne lâche rien !",
+    "Ton corps peut tout faire, c’est ton esprit qu’il faut convaincre !",
+    "Sois plus fort que tes excuses !",
+    "La victoire commence là où le confort s’arrête !",
+    "Fais-le pour toi, pas pour les autres !",
+    "Un jour de plus, un pas vers la grandeur !",
+    "Repousse tes limites, elles sont faites pour ça !",
+    "La constance transforme les rêves en réalité !",
+    "Tu es plus proche de ton but qu’hier ! 🚀"
 ];
+
+// Map of GIFs for exercises (add more as needed)
+const exerciseGifs = {
+    "Crunch jambes levées": "/gifs/jambes/tenor_crunches.gif",
+    // Add other exercises here, e.g.:
+    "Pompes mixtes": "/gifs/bras/tenor_pompe.gif",
+    "Squat maintien": "https://via.placeholder.com/200",
+    "Planche levée jambe": "https://via.placeholder.com/200",
+    "Superman alterné": "https://via.placeholder.com/200",
+    "Fentes sautées": "https://via.placeholder.com/200",
+    "V-ups": "https://via.placeholder.com/200",
+    "Planche tapotements": "https://via.placeholder.com/200"
+};
+
+// Map of instructions for exercises
+const exerciseInstructions = {
+    "Crunch jambes levées": "Allongé sur le dos, jambes levées à 90°, effectue des crunchs en relevant le buste vers les jambes. Expire en montant, inspire en descendant.",
+    "Pompes mixtes": "Effectue 7 pompes normales, 7 diamant, 6 piquées. Garde le dos droit et descends lentement.",
+    "Squat maintien": "Descends en squat, tiens 3 sec en bas, remonte lentement. Garde le dos droit.",
+    "Planche levée jambe": "En position de planche, lève une jambe pendant 30 sec. Alterne les côtés.",
+    "Superman alterné": "Allongé sur le ventre, lève bras droit et jambe gauche, puis alterne. Tiens 2 sec par côté.",
+    "Fentes sautées": "Fais des fentes en sautant pour changer de jambe. Garde les genoux à 90°.",
+    "V-ups": "Allongé, soulève jambes et torse en V. Redescends lentement sans toucher le sol.",
+    "Planche tapotements": "En planche, touche l’épaule opposée avec une main, alterne 20 fois."
+};
 
 // Workout data
 const workouts = {
@@ -246,6 +281,15 @@ function startTimer() {
     runTimer();
 }
 
+function stopTimer() {
+    clearInterval(timerInterval);
+    document.getElementById('timer').textContent = 30;
+    document.getElementById('timer-phase').textContent = 'Prêt';
+    document.getElementById('current-exercise').textContent = 'Clique sur Démarrer pour commencer !';
+    document.getElementById('next-exercise').textContent = '';
+    document.getElementById('tour-info').textContent = '';
+}
+
 function runTimer() {
     const workout = workouts[currentDay];
     const exercise = workout.exercises[currentExerciseIndex];
@@ -274,6 +318,8 @@ function runTimer() {
                         document.getElementById('timer-phase').textContent = 'Terminé !';
                         document.getElementById('current-exercise').textContent = 'Séance terminée ! Bravo ! 🎉';
                         document.getElementById('next-exercise').textContent = '';
+                        document.getElementById('exercise-gif').style.display = 'none';
+                        document.getElementById('exercise-instructions').textContent = '';
                         document.getElementById('tour-info').textContent = '';
                         triggerConfetti();
                         daysCompleted++;
@@ -297,18 +343,18 @@ function runTimer() {
 
 function updateWorkoutDisplay() {
     const workout = workouts[currentDay];
-    document.getElementById('current-exercise').textContent = `${workout.exercises[currentExerciseIndex].name} (${workout.exercises[currentExerciseIndex].reps})`;
+    const exercise = workout.exercises[currentExerciseIndex];
+    document.getElementById('current-exercise').textContent = `${exercise.name} (${exercise.reps})`;
     document.getElementById('next-exercise').textContent = currentExerciseIndex + 1 < workout.exercises.length
         ? `Suivant : ${workout.exercises[currentExerciseIndex + 1].name}`
         : `Tour ${currentTour + 1}/${workout.tours}`;
     document.getElementById('tour-info').textContent = `Tour ${currentTour}/${workout.tours}`;
-}
-
-function stopTimer() {
-    clearInterval(timerInterval);
-    document.getElementById('timer').textContent = 30;
-    document.getElementById('timer-phase').textContent = 'Prêt';
-    document.getElementById('current-exercise').textContent = 'Clique sur Démarrer pour commencer !';
-    document.getElementById('next-exercise').textContent = '';
-    document.getElementById('tour-info').textContent = '';
+    
+    // Update GIF
+    const gifElement = document.getElementById('exercise-gif');
+    gifElement.src = exerciseGifs[exercise.name] || "https://via.placeholder.com/200";
+    gifElement.style.display = 'block';
+    
+    // Update instructions
+    document.getElementById('exercise-instructions').textContent = exerciseInstructions[exercise.name] || "Effectue l'exercice avec une bonne technique.";
 }

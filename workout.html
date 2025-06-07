@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Séance du Jour - Défi 30 Jours</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,12 +24,16 @@
             <p id="timer-status">Temps : <span id="timer">30</span>s | <span id="timer-phase">Prêt</span></p>
             <div id="current-workout" class="current-workout">
                 <h3>Exercice en cours</h3>
-                <p id="current-exercise">Clique sur Démarrer pour commencer !</p>
-                <p id="next-exercise"></p>
+                <div class="exercise-display">
+                    <p id="current-exercise"></p>
+                    <img id="exercise-gif" src="" alt="Exercice GIF" style="display: none;">
+                    <p id="exercise-instructions"></p>
+                    <p id="next-exercise"></p>
+                </div>
                 <p id="tour-info"></p>
             </div>
-            <button onclick="startTimer()" class="start-buttons">Démarrer</button>
-            <button onclick="stopTimer()" class="stop-buttons">Arrêter</button>
+            <button class="start-buttons" onclick="startTimer()">Démarrer</button>
+            <button class="stop-buttons" onclick="stopTimer()">Arrêter</button>
         </div>
     </section>
 
