@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séance du Jour - Défi 30 Jours</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>💪 Séance du Jour</h1>
+        <p id="current-day-title">Chargement...</p>
+        <a href="index.html" class="back-button">Retour à l’accueil</a>
+    </header>
+
+    <section class="workout-session">
+        <div class="workout-details">
+            <h2>Séance Complète</h2>
+            <div id="workout-content"></div>
+        </div>
+        <div class="workout-timer">
+            <h2>Minuteur</h2>
+            <p id="timer-status">Temps : <span id="timer">30</span>s | <span id="timer-phase">Prêt</span></p>
+            <div id="current-workout" class="current-workout">
+                <h3>Exercice en cours</h3>
+                <p id="current-exercise">Clique sur Démarrer pour commencer !</p>
+                <p id="next-exercise"></p>
+                <p id="tour-info"></p>
+            </div>
+            <button onclick="startTimer()" class="start-buttons">Démarrer</button>
+            <button onclick="stopTimer()" class="stop-buttons">Arrêter</button>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.6.0/confetti.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

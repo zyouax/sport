@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #1f2937;
+    line-height: 1.6;
+    padding: 24px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+    padding: 40px 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #4b5563;
+}
+
+.quote {
+    margin-top: 12px;
+    font-style: italic;
+    font-size: 1.05em;
+    color: #f97316;
+}
+
+.progress-tracker {
+    max-width: 960px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.progress-tracker h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.progress-bar {
+    background: #e5e7eb;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    height: 100%;
+    width: 0%;
+    transition: width 0.6s ease;
+}
+
+.progress-tracker p {
+    font-size: 1.1em;
+    color: #4b5563;
+}
+
+#milestone-message {
+    color: #f97316;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.progress-tracker button, .start-button, .back-button, .timer button {
+    background: #1e3a8a;
+    border: none;
+    color: #ffffff;
+    padding: 12px 32px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-buttons {
+    background: #257500;
+    border: none;
+    color: #ffffff;
+    padding: 12px 32px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stop-buttons {
+    background: #b40101;
+    border: none;
+    color: #ffffff;
+    padding: 12px 32px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-tracker button:hover, .start-button:hover, .back-button:hover, .timer button:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.start-buttons:hover, .stop-buttons:hover {
+    background: #8b92a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.goal-tracker {
+    max-width: 960px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.goal-tracker h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.calendar div {
+    background: #e5e7eb;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.calendar .completed {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+.start-workout {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.start-workout h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.workout-session {
+    display: flex;
+    margin: 0 auto;
+    gap: 24px;
+}
+
+.workout-details {
+    width: 30%;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.workout-timer {
+    width: 70%;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.workout-details h2, .workout-timer h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+#timer-status {
+    font-size: 1.3em;
+    color: #4b5563;
+    margin-bottom: 16px;
+}
+
+#timer {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #f97316;
+}
+
+#timer-phase {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.current-workout {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.current-workout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.current-workout h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    position: relative;
+    z-index: 1;
+}
+
+#current-exercise {
+    font-size: 2em;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 12px 0;
+    position: relative;
+    z-index: 1;
+}
+
+#next-exercise {
+    font-size: 1.2em;
+    color: #4b5563;
+    position: relative;
+    z-index: 1;
+}
+
+#tour-info {
+    font-size: 1.1em;
+    color: #f97316;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+#workout-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin: 16px 0 8px;
+}
+
+#workout-content ul {
+    margin-left: 20px;
+    color: #4b5563;
+}
+
+#workout-content .exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+#workout-content .exercise-card {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#workout-content .exercise-card:hover {
+    transform: translateY(-4px);
+}
+
+#workout-content .exercise-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.tips {
+    max-width: 960px;
+    margin: 40px auto;
+}
+
+.tips h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.tips h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin: 16px 0 8px;
+}
+
+.tips ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    color: #4b5563;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    color: #4b5563;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Timer Animation */
+.timer {
+    position: relative;
+}
+
+.timer::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #f97316;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    z-index: -1;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 800px) {
+    .workout-session {
+        flex-direction: column;
+    }
+
+    .workout-details, .workout-timer {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .current-workout h3 {
+        font-size: 1.5em;
+    }
+
+    #current-exercise {
+        font-size: 1.4em;
+    }
+
+    .calendar {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .progress-tracker button, .start-button, .back-button, start-buttons, stop-buttons, .timer button {
+        padding: 10px 24px;
+        font-size: 0.9em;
+    }
+
+    #workout-content .exercise-grid {
+        grid-template-columns: 1fr;
+    }
+}

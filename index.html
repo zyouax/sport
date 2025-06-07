@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme de Musculation 30 Jours</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>💪 Défi Musculation 30 Jours</h1>
+        <p>Prêt à transformer ton corps sans équipement ? Abdos, bras, jambes : c’est parti !</p>
+        <div id="motivational-quote" class="quote"></div>
+    </header>
+
+    <section class="progress-tracker">
+        <h2>Ta Progression</h2>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <p>Jours complétés : <span id="days-completed">0</span>/30 | Streak : <span id="streak">0</span> jours</p>
+        <p id="milestone-message"></p>
+    </section>
+
+    <section class="goal-tracker">
+        <h2>Calendrier du Défi</h2>
+        <div id="calendar" class="calendar"></div>
+    </section>
+
+    <section class="start-workout">
+        <h2>Prêt pour la séance d’aujourd’hui ?</h2>
+        <a href="workout.html" class="start-button">Voulez-vous commencer une séance ?</a>
+    </section>
+
+    <section class="tips">
+        <h2>Conseils pour Réussir</h2>
+        <h4>Répétitions</h4>
+        <ul>
+            <li>Si 20 répétitions sont trop dures, réduis à 15 au début (pompes diamant/piquées, V-ups).</li>
+            <li>Priorise la technique : dos droit pour pompes, abdos contractés en planche.</li>
+            <li>Pompes mixtes (samedi) : 7 normales + 7 diamant + 6 piquées. Si intense, fais 20 pompes normales.</li>
+        </ul>
+        <h4>Progression sur 30 jours</h4>
+        <ul>
+            <li><strong>Semaine 1</strong>: 3 tours, 15-20 rép, focus technique.</li>
+            <li><strong>Semaine 2</strong>: 3-4 tours, 20 rép, repos 15 sec.</li>
+            <li><strong>Semaine 3</strong>: 4 tours, ajoute 5 rép pour 1-2 exercices.</li>
+            <li><strong>Semaine 4</strong>: 4 tours, intensifie (moins repos, variantes dures). Prends photos.</li>
+        </ul>
+        <h4>Nutrition pour Abdos Visibles</h4>
+        <ul>
+            <li>1,6-2 g protéines/kg (100-130 g/jour). Ex. : 2 œufs, 100 g poulet, yaourt grec.</li>
+            <li>Réduis féculents le soir pour perdre gras.</li>
+            <li>Cardio (mardi) brûle calories. Ajoute 10 min corde à sauter imaginaire si possible.</li>
+        </ul>
+        <h4>Tabagisme</h4>
+        <ul>
+            <li>Réduire de 5-10 cigarettes/jour améliore souffle pour cardio et mountain climbers.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Créé pour ton défi fitness | 2025</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.6.0/confetti.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
